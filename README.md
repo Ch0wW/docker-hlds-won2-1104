@@ -15,7 +15,6 @@ A docker image that automates setting up a 1.1.0.4 Half-Life dedicated server, u
 ### Included mods
 - Counter-Strike beta 7.1
 - Counter-Strike 1.0 (retail)
-- Counter-Strike 1.1c (retail, patched `v1.1c`)
 
 ### Installation/Usage
 
@@ -35,7 +34,6 @@ services:
     volumes:
       - ./config/cstrk10:/server/hlds_l/cstrk10
       - ./config/cstrk71:/server/hlds_l/cstrk71
-      - ./config/csret11:/server/hlds_l/csret11
     ports:
       - 27015:27015
       - 27015:27015/udp
@@ -50,13 +48,7 @@ once done, just execute `docker-compose up` to make sure everything works as int
 Simply go to the `config` folder, and modify the required folders you wish.
 
 - `config/cstrk10` is for Counter-Strike 1.0.
-- `config/csret11` is for Counter-Strike 1.1. 
-
-
-### Why 'csret11' instead of 'cstrk11' ?
-
-Half-Life cannot have modfolders longer than 7 characters. Besides, from a community standpoint, `cstrk11` is an already existing folder, for CS Beta 1.1. In order to properly recognize CS v1.1 from CS Beta 1.1, I decided to rename the folder to `csret11` (short for "*CS Retail 1.1*").
-
+- `config/cstrk71` is for Counter-Strike Beta 7.1
 -----------
 
 This project uses files copyrighted by VALVe. 
