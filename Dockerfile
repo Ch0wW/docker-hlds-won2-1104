@@ -8,9 +8,8 @@ RUN groupadd -r hlds
 RUN useradd --no-log-init --system --create-home --home-dir /server --gid hlds  hlds
 USER hlds
 
-# 3) Install HLDS 3.1.1.1 and 3.1.1.e
+# 3) Install HLDS 3.1.0.4
 RUN wget -q -O -  http://eisbaer.essentrix.net/halflife/hl_linux/hlds_l3104.tar.gz | tar -xzf - -C /server
-RUN wget -q -O - http://eisbaer.essentrix.net/halflife/hl_linux/hlds_l.3104.nowon.tar.gz | tar -xzf - -C /server/hlds_l
 
 WORKDIR /server/hlds_l/
 
@@ -18,6 +17,8 @@ WORKDIR /server/hlds_l/
 USER root
 
 COPY ./install/hlds_start /server/hlds_l/hlds_start
+COPY ./install/nowon /server/hlds_l/nowon.so
+
 COPY config/valve/* ./valve/*
 RUN chmod +x hlds_run
 RUN chmod +x hlds_start
@@ -26,10 +27,6 @@ RUN chmod +x hlds_start
 RUN rm -rf ./tfc
 
 USER hlds
-
-# Expose required default ports
-EXPOSE 27015
-EXPOSE 27015/udp
 
 ENV TERM xterm
 
