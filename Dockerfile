@@ -17,7 +17,7 @@ WORKDIR /server/hlds_l/
 USER root
 
 COPY ./install/hlds_start /server/hlds_l/hlds_start
-COPY ./install/nowon /server/hlds_l/nowon.so
+COPY ./install/nowon.so /server/hlds_l/nowon.so
 
 COPY config/valve/* ./valve/*
 RUN chmod +x hlds_run
