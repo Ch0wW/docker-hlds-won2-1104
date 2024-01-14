@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./config/cstrk10:/server/hlds_l/cstrk10
-#      - ./config/dmc:/server/hlds_l/dmc
-#      - ./config/tfc:/server/hlds_l/tfc
+      - ./config/cstrk71:/server/hlds_l/cstrk71
+      - ./config/tfc:/server/hlds_l/tfc
     ports:
       - 27015:27015
       - 27015:27015/udp
