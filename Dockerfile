@@ -19,7 +19,7 @@ USER root
 COPY ./install/hlds_start /server/hlds_l/hlds_start
 COPY ./install/nowon.so /server/hlds_l/nowon.so
 
-COPY config/valve/* ./valve/*
+COPY config/valve/* ./valve/
 RUN chmod +x hlds_run
 RUN chmod +x hlds_start
 
