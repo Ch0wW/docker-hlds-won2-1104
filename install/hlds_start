@@ -89,10 +89,6 @@ init() {
 
 	# Only detect the CPU if it hasnt been set with
 	# either environment or command line
-	if test "$HL_DETECT" -eq 1; then
-		detectcpu
-	fi
-
 	if test ! -f "$HL"; then
 		echo "Half-life binary '$HL' not found, exiting"
 		quit 1

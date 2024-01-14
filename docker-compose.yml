@@ -8,7 +8,7 @@ services:
     volumes:
       - ./config/cstrk10:/server/hlds_l/cstrk10
       - ./config/cstrk71:/server/hlds_l/cstrk71
-      - ./config/cstrk11r:/server/hlds_l/cstrk11r
+      - ./config/csret11:/server/hlds_l/csret11
     ports:
       - 27015:27015
       - 27015:27015/udp
