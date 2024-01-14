@@ -17,7 +17,7 @@ init() {
 	GAME="valve"
 	DEBUG=""
 	RESTART="yes"
-	HL=./hlds_linux
+	HL=./hlds_run
 	TIMEOUT=10 # time to wait after a crash (in seconds)
 	CRASH_DEBUG_MSG="email debug.log to linux@valvesoftware.com"
 	GDB="gdb" # the gdb binary to run
