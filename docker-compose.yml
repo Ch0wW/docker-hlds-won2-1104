@@ -1,0 +1,18 @@
+version: "3.0"
+
+services:
+  hlds:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./config/cstrk10:/server/hlds_l/cstrk10
+#      - ./config/dmc:/server/hlds_l/dmc
+#      - ./config/tfc:/server/hlds_l/tfc
+    ports:
+      - 27015:27015
+      - 27015:27015/udp
+    environment:
+      - LD_PRELOAD="./nowon.so"
+    command:
+      - -port 27015 -game cstrk10 +map de_dust +maxplayers 16 +sv_lan 1
