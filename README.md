@@ -20,7 +20,7 @@ A docker image that automates setting up a 1.1.0.4 Half-Life dedicated server, u
 
 Simply edit the `docker-compose.yml` to add or modify anything you require.
 
-If you need to change the port of your server, change all occurences (= in `ports` and in the `command` sections)
+If you need to change the port of your server, change all occurences (= in `ports` and in the `command` sections). Change also the `user` token so that it is checking with the user and group running the container.
 
 **Example of Docker file**
 ```
