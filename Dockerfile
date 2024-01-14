@@ -14,10 +14,11 @@ RUN wget -q -O - http://eisbaer.essentrix.net/halflife/hl_linux/hlds_l.3104.nowo
 
 WORKDIR /server/hlds_l/
 
-#Install WON2Fixes and modified HLDS_RUN
+#Install WON2 masterserver and modified HLDS_RUN
 USER root
 
 COPY ./install/hlds_start /server/hlds_l/hlds_start
+COPY config/valve/* ./valve/*
 RUN chmod +x hlds_run
 RUN chmod +x hlds_start
 
