@@ -17,7 +17,9 @@ WORKDIR /server/hlds_l/
 #Install WON2Fixes and modified HLDS_RUN
 USER root
 
+COPY ./install/hlds_start /server/hlds_l/hlds_start
 RUN chmod +x hlds_run
+RUN chmod +x hlds_start
 
 # Then, remove default mod folders
 RUN rm -rf ./tfc
@@ -30,6 +32,6 @@ EXPOSE 27015/udp
 
 ENV TERM xterm
 
-ENTRYPOINT ["./hlds_run"]
+ENTRYPOINT ["./hlds_start"]
 
 CMD ["-game valve", "+map crossfire", "+maxplayers 16"]
