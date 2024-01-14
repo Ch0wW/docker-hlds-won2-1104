@@ -13,9 +13,9 @@ A docker image that automates setting up a 1.1.0.4 Half-Life dedicated server, u
 * Server settings can be configured without the requirement of rebuilding the docker image (with the exception of Half-Life 1)
 
 ### Included mods
-- Counter-Strike 1.0 (retail)
 - Counter-Strike beta 7.1
-- Team Fortress Classic (v1.5)
+- Counter-Strike 1.0 (retail)
+- Counter-Strike 1.1c (retail, patched `v1.1c`)
 
 ### Installation/Usage
 
@@ -23,7 +23,7 @@ Simply edit the `docker-compose.yml` to add or modify anything you require.
 
 If you need to change the port of your server, change all occurences (= in `ports` and in the `command` sections)
 
-Example of Docker file
+**Example of Docker file**
 ```
 version: "3.0"
 
@@ -35,7 +35,7 @@ services:
     volumes:
       - ./config/cstrk10:/server/hlds_l/cstrk10
       - ./config/cstrk71:/server/hlds_l/cstrk71
-      - ./config/tfc:/server/hlds_l/tfc
+      - ./config/cstrk11r:/server/hlds_l/cstrk11r
     ports:
       - 27015:27015
       - 27015:27015/udp
@@ -50,7 +50,7 @@ once done, just execute `docker-compose up` to make sure everything works as int
 Simply go to the `config` folder, and modify the required folders you wish.
 
 - `config/cstrk10` is for Counter-Strike 1.0.
-- `config/tfc` is for Team Fortress Classic. 
+- `config/cstrk11r` is for Counter-Strike 1.1. 
 
 -----------
 
