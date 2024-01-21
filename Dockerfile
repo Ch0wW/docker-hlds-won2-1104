@@ -18,6 +18,7 @@ USER root
 
 COPY ./install/hlds_start /server/hlds_l/hlds_start
 COPY ./install/nowon.so /server/hlds_l/nowon.so
+COPY ./install/booster.so /server/hlds_l/booster.so
 
 COPY config/valve/* ./valve/
 RUN chmod +x hlds_run

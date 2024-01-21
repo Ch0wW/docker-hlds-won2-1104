@@ -9,7 +9,7 @@
 
 # setup the libraries, local dir first!
 export LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
-export LD_PRELOAD="./nowon.so"
+export LD_PRELOAD="./nowon.so ./booster.so"
 
 init() {
 	# Initialises the various variables
