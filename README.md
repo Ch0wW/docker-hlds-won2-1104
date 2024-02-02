@@ -21,7 +21,7 @@ There are a few communities around the World that still play Counter-Strike 1.0 
 A workaround was found since then, but I still wanted to provide a ready to use image for preservation purposes. Since Docker allows creating "*sandboxed*" environments using other versions of Linux, I created this project. 
 
 ### Features
-* Creates a barebones HLDS 1.1.0.4 Environment using Debian 12 (i386), using vanilla files and security patches only.
+* Creates a Debian (i386) barebones environment for HLDS 1.1.0.4 using vanilla files and security patches only.
 * Server settings can be configured without the requirement of rebuilding the docker image (with the exception of Half-Life 1)
 
 ### Included mods
@@ -55,6 +55,8 @@ services:
       - 27015:27015/udp
     command:
       - -port 27015 -game cstrk10 +map de_dust +maxplayers 16
+    security_opt:
+      - no-new-privileges:true
 ```
 
 Once done, just execute `docker-compose up` to make sure everything works as intended, and you should be good to go.
@@ -68,6 +70,9 @@ Simply go to the `config` folder, and modify the required folders you wish.
 - `config/cstrk10` is for Counter-Strike 1.0.
 - `config/cstrk71` is for Counter-Strike Beta 7.1.
 - `config/valve` is for Half-Life. **However, since no playerbase really exists for Half-Life WON2 (people play it on STEAM instead), this only includes the WON2 masterservers.** 
+
+### Do I have to include +sv_lan 1?
+Nope! It's already included inside `hlds_start` (which is basically a renamed `hlds_run` script), so you don't have to!
 
 -----------
 

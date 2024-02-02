@@ -1,7 +1,7 @@
 FROM i386/debian:12.4-slim
 
 # 1) INSTALL BASICS
-RUN apt-get update && apt-get install -y wget libc6 libstdc++6 --force-yes
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget libc6 libstdc++6 --force-yes
 
 # 2) Create user
 RUN groupadd -r hlds
@@ -9,7 +9,9 @@ RUN useradd --no-log-init --system --create-home --home-dir /server --gid hlds  
 USER hlds
 
 # 3) Install HLDS 3.1.0.4
-RUN wget -q -O -  http://eisbaer.essentrix.net/halflife/hl_linux/hlds_l3104.tar.gz | tar -xzf - -C /server
+COPY ./install/hlds_l3104.tar.gz /server/
+RUN tar -xzf /server/hlds_l3104.tar.gz -C /server 
+RUN rm /server/hlds_l3104.tar.gz
 
 WORKDIR /server/hlds_l/
 
