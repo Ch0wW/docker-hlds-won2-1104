@@ -1,6 +1,11 @@
-# docker-hlds-won2-1104
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P27UZHV)
+## This Docker has been put to Read-Only! Our [Docker image for HLDS 1.1.1.0](https://github.com/Ch0wW/docker-hlds-won2) now includes beta 7.1 and 1.0 Retail!
+
+[![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://patreon.baseq.fr)
+
+
+### ORIGINAL README.md
+
 
 This project generates a Docker image that automates setting up a Half-Life dedicated server, version 1.1.0.4, using the WON2 protocol. This docker image also includes several popular mods that are still played using this version which are Counter-Strike 1.0, and Beta 7.1.
 
